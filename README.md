@@ -46,5 +46,5 @@ reusable Java components(可复用的java组建,扩展自apache commons),支持j
 
 **10 多线程工具类，包含定时调度，多线程队列处理器，多线程数据定时循环处理器等，具体见:**
 
-
+https://github.com/ilovejiaozi/smartutil/wiki/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B7%A5%E5%85%B7%E7%B1%BB
 

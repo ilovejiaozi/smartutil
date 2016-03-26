@@ -1,4 +1,3 @@
 # smartutil
-reusable Java components
+reusable Java components(可复用的java组建,扩展自apache commons)
 
-扩展自apache commons

@@ -35,7 +35,7 @@ final class SmartSubscriberRegistry {
 		for (Map.Entry<Short, List<Method>> en : prioritySubscribers.entrySet()) {
 			short priotity = en.getKey();
 			for (Method m : en.getValue()) {
-				Class<?> eventType = m.getParameters()[0].getType();
+				Class<?> eventType = m.getParameterTypes()[0];
 				List<SmartSubscriber> sortedMapSubscribers = getEventTypeSubscribers(eventType, priotity);
 				sortedMapSubscribers.add(SmartReflectMethodSubscriber.create(bus, listener, m));
 			}
@@ -119,14 +119,14 @@ final class SmartSubscriberRegistry {
 			if (declaredMethods != null) {
 				for (Method method : declaredMethods) {
 					if (method.isAnnotationPresent(SmartSubscribe.class)) {
-						SmartSubscribe[] annotations = method.getAnnotationsByType(SmartSubscribe.class);
+						SmartSubscribe annotation = method.getAnnotation(SmartSubscribe.class);
 						// 指定了某个特定的EventBus的identifier
-						String busidentifier = annotations[0].smartEventBus();
+						String busidentifier = annotation.smartEventBus();
 						if (SmartStringUtil.isNotEmpty(busidentifier) && !SmartStringUtil.equals(busidentifier, this.bus.identifier())) {
 							continue;
 						}
 
-						short priority = (short) (MAX_PRORITY - annotations[0].priority());
+						short priority = (short) (MAX_PRORITY - annotation.priority());
 						List<Method> list = priorityMethods.get(priority);
 						if (list == null) {
 							list = new ArrayList<Method>();

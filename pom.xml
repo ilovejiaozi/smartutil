@@ -108,6 +108,17 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>lyarc-releases-repository</id>
+			<url>${lyarcReleasesRepo}</url>
+		</repository>
+		<snapshotRepository>
+			<id>lyarc-snapshots-repository</id>
+			<url>${lyarcSnapshotsRepo}</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 
 </project>

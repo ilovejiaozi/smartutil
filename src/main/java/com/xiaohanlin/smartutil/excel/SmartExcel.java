@@ -2,6 +2,7 @@ package com.xiaohanlin.smartutil.excel;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class SmartExcel {
 
-	List<SmartSheet> sheetList;
+	List<SmartSheet> sheetList = new ArrayList<SmartSheet>();;
 
 	public SmartExcel(String fileName) {
 		org.apache.poi.ss.usermodel.Workbook workbook = null;

@@ -29,6 +29,12 @@ public class SmartScheduleManagement {
 			scheduler = Executors.newScheduledThreadPool(threadNum, SmartThreadFactory.create("<<SmartScheduleManagement>>"));
 		}
 	}
+	
+	public synchronized void start(String threadNamePrefix) {
+		if (scheduler == null) {
+			scheduler = Executors.newScheduledThreadPool(threadNum, SmartThreadFactory.create(threadNamePrefix));
+		}
+	}
 
 	public synchronized void shutdown() {
 		if (scheduler != null && !scheduler.isShutdown()) {

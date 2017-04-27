@@ -18,6 +18,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============split =======================
 
 	public static Set<String> splitConvertToSet(String str, String split) {
+		if (isEmpty(str)) {
+			return new HashSet<String>();
+		}
 		String[] splitArr = str.split(split);
 		HashSet<String> set = new HashSet<String>(splitArr.length);
 		for (String string : splitArr) {
@@ -27,6 +30,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static List<String> splitConvertToList(String str, String split) {
+		if (isEmpty(str)) {
+			return new ArrayList<String>();
+		}
 		String[] splitArr = str.split(split);
 		ArrayList<String> list = new ArrayList<String>(splitArr.length);
 		for (String string : splitArr) {
@@ -38,6 +44,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============split Integer=======================
 
 	public static List<Integer> splitConverToIntList(String str, String split, int defaultVal) {
+		if (isEmpty(str)) {
+			return new ArrayList<Integer>();
+		}
 		String[] strArr = str.split(split);
 		List<Integer> list = new ArrayList<Integer>(strArr.length);
 		for (int i = 0; i < strArr.length; i++) {
@@ -57,6 +66,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static int[] splitConvertToIntArray(String str, String split, int defaultVal) {
+		if (isEmpty(str)) {
+			return new int[0];
+		}
 		String[] strArr = str.split(split);
 		int[] result = new int[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
@@ -77,6 +89,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============split 2 Long=======================
 
 	public static List<Long> splitConverToLongList(String str, String split, long defaultVal) {
+		if (isEmpty(str)) {
+			return new ArrayList<Long>();
+		}
 		String[] strArr = str.split(split);
 		List<Long> list = new ArrayList<Long>(strArr.length);
 		for (int i = 0; i < strArr.length; i++) {
@@ -96,6 +111,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static long[] splitConvertToLongArray(String str, String split, long defaultVal) {
+		if (isEmpty(str)) {
+			return new long[0];
+		}
 		String[] strArr = str.split(split);
 		long[] result = new long[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
@@ -116,6 +134,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============split convert byte=======================
 
 	public static List<Byte> splitConverToByteList(String str, String split, byte defaultVal) {
+		if (isEmpty(str)) {
+			return new ArrayList<Byte>();
+		}
 		String[] strArr = str.split(split);
 		List<Byte> list = new ArrayList<Byte>(strArr.length);
 		for (int i = 0; i < strArr.length; i++) {
@@ -135,6 +156,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static byte[] splitConvertToByteArray(String str, String split, byte defaultVal) {
+		if (isEmpty(str)) {
+			return new byte[0];
+		}
 		String[] strArr = str.split(split);
 		byte[] result = new byte[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
@@ -155,6 +179,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============split convert double=======================
 
 	public static List<Double> splitConverToDoubleList(String str, String split, double defaultVal) {
+		if (isEmpty(str)) {
+			return new ArrayList<Double>();
+		}
 		String[] strArr = str.split(split);
 		List<Double> list = new ArrayList<Double>(strArr.length);
 		for (int i = 0; i < strArr.length; i++) {
@@ -174,6 +201,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static double[] splitConvertToDoubleArray(String str, String split, double defaultVal) {
+		if (isEmpty(str)) {
+			return new double[0];
+		}
 		String[] strArr = str.split(split);
 		double[] result = new double[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
@@ -194,6 +224,9 @@ public class SmartStringUtil extends StringUtils {
 	// ===============solit convert float=======================
 
 	public static List<Float> splitConverToFloatList(String str, String split, float defaultVal) {
+		if (isEmpty(str)) {
+			return new ArrayList<Float>();
+		}
 		String[] strArr = str.split(split);
 		List<Float> list = new ArrayList<Float>(strArr.length);
 		for (int i = 0; i < strArr.length; i++) {
@@ -213,6 +246,9 @@ public class SmartStringUtil extends StringUtils {
 	}
 
 	public static float[] splitConvertToFloatArray(String str, String split, float defaultVal) {
+		if (isEmpty(str)) {
+			return new float[0];
+		}
 		String[] strArr = str.split(split);
 		float[] result = new float[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
@@ -229,7 +265,6 @@ public class SmartStringUtil extends StringUtils {
 	public static float[] splitConvertToFloatArray(String str, String split) {
 		return splitConvertToFloatArray(str, split, 0f);
 	}
-
 
 	// ===============upperCase=======================
 
